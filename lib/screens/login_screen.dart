@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'signup_screen.dart';
-import 'dashboard_screen.dart'; // pastikan import ini ada
+import 'dashboard_screen.dart'; // pastikan import ini ada)
+import 'splashscreen.dart';
 
 class LoginScreen extends StatefulWidget {
   static const route = '/signin';
@@ -23,11 +24,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
   // Widget untuk label dengan tanda bintang
   Widget requiredLabel(String label) => Row(
-        children: [
-          Text(label, style: const TextStyle(fontSize: 13)),
-          const Text("*", style: TextStyle(color: Colors.red, fontSize: 13)),
-        ],
-      );
+    children: [
+      Text(label, style: const TextStyle(fontSize: 13)),
+      const Text("*", style: TextStyle(color: Colors.red, fontSize: 13)),
+    ],
+  );
 
   // Tombol biru gradient
   Widget primaryButton({required String label, required VoidCallback onTap}) =>
@@ -158,7 +159,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
                                 content: Text(
-                                    'Email dan Password tidak boleh kosong!'),
+                                  'Email dan Password tidak boleh kosong!',
+                                ),
                                 backgroundColor: Colors.red,
                               ),
                             );
@@ -166,7 +168,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             // Jika tidak, lanjutkan ke dashboard
                             Navigator.pushNamedAndRemoveUntil(
                               context,
-                              DashboardScreen.route,
+                              SplashScreen.route,
                               (route) => false,
                             );
                           }
@@ -185,7 +187,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             style: TextStyle(fontSize: 13),
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
