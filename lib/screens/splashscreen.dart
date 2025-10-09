@@ -29,39 +29,34 @@ class _SplashScreenState extends State<SplashScreen> {
     }); // Future.delayed
   }
 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      // Beri warna latar belakang yang sama dengan tema aplikasi
+      backgroundColor: const Color(0xFFB8F8FB),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // 1. Menggunakan kembali widget Logo yang sudah ada
+            Image.asset('assets/images/logo-mola.png', width: 120, height: 120),
+            // 2. Indikator loading yang berputar
+            const CircularProgressIndicator(
+              color: Color(0xFF18E8FF), // Warna biru sesuai tema
+            ), // CircularProgressIndicator
+            const SizedBox(height: 16),
 
-@override
-Widget build(BuildContext context) {
-  return Scaffold(
-    // Beri warna latar belakang yang sama dengan tema aplikasi
-    backgroundColor: const Color(0xFFB8F8FB),
-    body: Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          // 1. Menggunakan kembali widget Logo yang sudah ada
-          Image.asset(
-  'assets/images/logo-mola.png',
-  width: 120,
-  height: 120,
-),
-          // 2. Indikator loading yang berputar
-          const CircularProgressIndicator(
-            color: Color(0xFF18E8FF), // Warna biru sesuai tema
-          ), // CircularProgressIndicator
-          const SizedBox(height: 16),
-
-          // 3. Teks "Loading..."
-          Text(
-            'Loading Bersabar...',
-            style: TextStyle(
-              fontSize: 16,
-              color: Colors.grey[600],
-            ), // TextStyle
-          ), // Text
-        ], // children
-      ), // Column
-    ), // Center
-  ); // Scaffold
-}
+            // 3. Teks "Loading..."
+            Text(
+              'Loading Bersabar...',
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.grey[600],
+              ), // TextStyle
+            ), // Text
+          ], // children
+        ), // Column
+      ), // Center
+    ); // Scaffold
+  }
 }

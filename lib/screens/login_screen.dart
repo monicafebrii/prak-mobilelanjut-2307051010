@@ -24,11 +24,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
   // Widget untuk label dengan tanda bintang
   Widget requiredLabel(String label) => Row(
-    children: [
-      Text(label, style: const TextStyle(fontSize: 13)),
-      const Text("*", style: TextStyle(color: Colors.red, fontSize: 13)),
-    ],
-  );
+        children: [
+          Text(label, style: const TextStyle(fontSize: 13)),
+          const Text("*", style: TextStyle(color: Colors.red, fontSize: 13)),
+        ],
+      );
 
   // Tombol biru gradient
   Widget primaryButton({required String label, required VoidCallback onTap}) =>
@@ -159,8 +159,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
                                 content: Text(
-                                  'Email dan Password tidak boleh kosong!',
-                                ),
+                                    'Email dan Password tidak boleh kosong!'),
                                 backgroundColor: Colors.red,
                               ),
                             );
@@ -187,7 +186,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             style: TextStyle(fontSize: 13),
                           ),
                         ),
-                      ),
+                      )
                     ],
                   ),
                 ),
